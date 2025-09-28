@@ -10,7 +10,7 @@
 
 ---
 
-## 📌 1. Descrição do Projeto
+## 1. Descrição do Projeto
 
 Este projeto visa **prever a quantidade de violações de dados (Data Breaches) por tipo de organização** com base em séries temporais históricas, utilizando e comparando três abordagens preditivas:
 
@@ -22,7 +22,7 @@ O estudo atende aos objetivos do **MVP/Prova 1 do Programa de Pós-Graduação P
 
 ---
 
-## 📊 2. Dataset
+## 2. Dataset
 
 * **Período analisado:** **2010 – 2023** (dados anteriores a 2010 foram desconsiderados por baixa consistência)
 * **Periodicidade:** agregação **mensal (ME)**
@@ -41,7 +41,7 @@ O estudo atende aos objetivos do **MVP/Prova 1 do Programa de Pós-Graduação P
 
 ---
 
-## ⚙️ 3. Ambiente e Dependências
+## 3. Ambiente e Dependências
 
 O código foi desenvolvido em **Python 3.10+** e testado no **Google Colab**.
 
@@ -60,7 +60,7 @@ Principais bibliotecas:
 
 ---
 
-## 📝 4. Preparação dos Dados
+## 4. Preparação dos Dados
 
 1. **Leitura direta** do arquivo (Excel/Google Sheets).
 2. **Ajuste de datas incompletas** (`YYYY` → descartado; `YYYY-MM` → assumido dia 1).
@@ -70,7 +70,7 @@ Principais bibliotecas:
 
 ---
 
-## 🔍 5. Metodologia e Modelos
+## 5. Metodologia e Modelos
 
 * **Treino:** todas as observações **exceto as últimas 24 meses**
 * **Teste:** **últimas 24 meses** (2022-2023)
@@ -92,7 +92,7 @@ Principais bibliotecas:
 
 ---
 
-## ⚖️ 6. Métricas de Avaliação
+## 6. Métricas de Avaliação
 
 Foram utilizadas três métricas clássicas:
 
@@ -109,7 +109,7 @@ De acordo com **Lewis (1982)**:
 
 ---
 
-## 🚀 7. Execução do Projeto
+## 7. Execução do Projeto
 
 1. Abrir o notebook **`OrganizationType_Prophet_x_Arima_x_Xgboost_v2.ipynb`** no Colab.
 2. Instalar as dependências listadas.
@@ -128,7 +128,7 @@ De acordo com **Lewis (1982)**:
 
 ---
 
-## 📈 8. Resultados Principais
+## 8. Resultados Principais
 
 O desempenho foi avaliado por **MAPE (%)** para cada setor e modelo.
 
@@ -141,7 +141,7 @@ O desempenho foi avaliado por **MAPE (%)** para cada setor e modelo.
 
 ---
 
-## 🏆 9. Conclusão
+## 9. Conclusão
 
 A análise evidencia que **a métrica MAPE foi determinante para identificar a acurácia relativa entre setores e modelos**, validando achados do artigo de referência.
 
@@ -152,11 +152,11 @@ A análise evidencia que **a métrica MAPE foi determinante para identificar a a
 
 Esses resultados reforçam a importância da **seleção contextual do modelo** e demonstram como métricas interpretáveis, como **MAPE**, orientam a **tomada de decisão em políticas de segurança cibernética**.
 
-> 🔮 **Perspectivas Futuras:** incorporar **modelos de deep learning (LSTM, TCN)**, explorar **previsão por tipo de vazamento** e **expandir a análise para bases globais**, alinhando-se às recomendações de trabalhos recentes.
+> **Perspectivas Futuras:** incorporar **modelos de deep learning (LSTM, TCN)**, explorar **previsão por tipo de vazamento** e **expandir a análise para bases globais**, alinhando-se às recomendações de trabalhos recentes.
 
 ---
 
-## 📂 10. Estrutura do Repositório
+## 10. Estrutura do Repositório
 
 ```
 ├── OrganizationType_Prophet_x_Arima_x_Xgboost_v2.ipynb
@@ -171,7 +171,7 @@ Esses resultados reforçam a importância da **seleção contextual do modelo** 
 ---
 
 **Autor:** Evanei Gomes dos Santos – PPEE/UnB 2025
-📧 [evanei.santos@aluno.unb.br](mailto:evanei.santos@aluno.unb.br)
+[evanei.santos@aluno.unb.br](mailto:evanei.santos@aluno.unb.br)
 
 ---
 
