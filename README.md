@@ -131,9 +131,6 @@ De acordo com **Lewis (1982)**:
 ## 📈 8. Resultados Principais
 
 O desempenho foi avaliado por **MAPE (%)** para cada setor e modelo.
-O **heatmap abaixo** sintetiza a comparação (quanto mais claro, menor MAPE → melhor precisão):
-
-![Heatmap MAPE – ARIMA vs Prophet vs XGBoost](./imagens/heatmap_mape.jpg)
 
 > 🔎 Observações:
 >
