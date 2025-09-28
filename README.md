@@ -1,9 +1,9 @@
 
 ## MVP – Ciência de Dados: Análise Preditiva para Violação de Dados - Uma abordagem comparativa entre Modelos
 
-**Discente:** *\[[Evanei Gomes dos Santos]*
+**Discente:** *\[Evanei Gomes dos Santos]*
 
-**Doscente:** *\[[Andre Luiz Marques Serrano]*
+**Doscente:** *\[Andre Luiz Marques Serrano]*
 
 **Data:** *\[28/09/2025]*
 
