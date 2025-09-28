@@ -176,9 +176,3 @@ Esses resultados reforçam a importância da **seleção contextual do modelo** 
 
 ---
 
-### 🔑 Destaques desta versão do README:
-
-* Integra o **heatmap MAPE** como elemento visual-chave da análise.
-* Alinha-se ao artigo científico, reforçando **MAPE como métrica central**.
-* Conclusão mais robusta e aplicada à **gestão de risco em cibersegurança**.
-* Estrutura clara para **execução prática no Colab** e para **reprodutibilidade**.
