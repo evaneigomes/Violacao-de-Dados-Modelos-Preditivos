@@ -3,7 +3,7 @@
 
 **Discente:** *\[Evanei Gomes dos Santos]*
 
-**Doscente:** *\[Andre Luiz Marques Serrano]*
+**Docente:** *\[Andre Luiz Marques Serrano]*
 
 **Data:** *\[28/09/2025]*
 
