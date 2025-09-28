@@ -24,7 +24,6 @@ O estudo atende aos objetivos do **MVP/Prova 1 do Programa de Pós-Graduação P
 
 ## 📊 2. Dataset
 
-* **Fonte:** Data Breach Chronology da [Privacy Rights Clearinghouse (2025)](https://privacyrights.org) 
 * **Período analisado:** **2010 – 2023** (dados anteriores a 2010 foram desconsiderados por baixa consistência)
 * **Periodicidade:** agregação **mensal (ME)**
 * **Atributos principais:**
