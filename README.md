@@ -12,7 +12,7 @@
 
 ## 1. Definição do Problema
 
-Empresas e órgãos públicos estão enfrentando mais **violações de dados**, que expõem informações sensíveis e geram grandes custos, como os **US$ 4,88 milhões** de prejuízo médio por incidente. Esses eventos seguem padrões, e entender essa dinâmica ajuda a **prever picos** e melhorar a prevenção.
+Organizações públicas e privadas enfrentam um aumento de **violações de dados**, expondo informações sensíveis e causando prejuízos financeiros e danos à reputação. O custo médio de uma violação de dados, segundo a IBM Security, é de **US$ 4,88 milhões**. Esses incidentes não são aleatórios, mas seguem **padrões temporais e setoriais** que, se compreendidos, podem ajudar a antecipar picos e otimizar a prevenção e a resposta.
 
 Este MVP busca prever a quantidade mensal de violações de dados por tipo de organização (ex.: saúde, varejo, governo), a partir de séries temporais históricas (2010–2023) extraídas do dataset Privacy Rights Clearinghouse – Data Breach Chronology
 
