@@ -10,15 +10,22 @@
 
 ---
 
-## 1. Descrição do Projeto
+## 1. Definição do Problema
 
-Este projeto visa **prever a quantidade de violações de dados (Data Breaches) por tipo de organização** com base em séries temporais históricas, utilizando e comparando três abordagens preditivas:
+Empresas e órgãos públicos estão enfrentando mais **violações de dados**, que expõem informações sensíveis e geram grandes custos, como os **US$ 4,88 milhões** de prejuízo médio por incidente. Esses eventos seguem padrões, e entender essa dinâmica ajuda a **prever picos** e melhorar a prevenção.
+
+Este MVP busca prever a quantidade mensal de violações de dados por tipo de organização (ex.: saúde, varejo, governo), a partir de séries temporais históricas (2010–2023) extraídas do dataset Privacy Rights Clearinghouse – Data Breach Chronology
 
 * **Prophet (Meta/Facebook)** – modelo estatístico aditivo, robusto para sazonalidade.
 * **ARIMA/SARIMA** – modelo estatístico clássico para séries temporais.
 * **XGBoost Regressor** – modelo de aprendizado de máquina baseado em árvores de decisão (Gradient Boosting).
 
 O estudo atende aos objetivos do **MVP/Prova 1 do Programa de Pós-Graduação Profissional em Engenharia Elétrica (PPEE/UnB)** e faz parte de uma linha de pesquisa sobre **cibersegurança e predição de incidentes**, fundamentando-se em **modelos comparativos** para auxiliar **estratégias de mitigação de riscos e políticas de segurança da informação**.
+
+Hipótese
+
+As tendências históricas de violações de dados, agregadas mensalmente por setor organizacional, contêm informações suficientes para gerar previsões confiáveis sobre incidentes futuros.
+O uso de modelos de séries temporais e de aprendizado de máquina permite reduzir o erro de previsão (MAPE) para níveis aceitáveis (< 20%) em setores com maior regularidade histórica.
 
 ---
 
