@@ -31,20 +31,56 @@ O uso de modelos de séries temporais e de aprendizado de máquina permite reduz
 
 ## 2. Dataset
 
-* **Período analisado:** **2010 – 2023** (dados anteriores a 2010 foram desconsiderados por baixa consistência)
-* **Periodicidade:** agregação **mensal (ME)**
-* **Atributos principais:**
+**Fonte:** [Privacy Rights Clearinghouse – Data Breach Chronology](https://privacyrights.org)
+**Período:** **2010 – 2023** (registros anteriores a 2010 foram desconsiderados por baixa consistência)
+**Periodicidade:** agregação **mensal (ME)** para as séries temporais.
 
-  * `Date Breach` – data do incidente
-  * `BSF` (Serviços Financeiros)
-  * `BSO` (Outros Negócios)
-  * `BSR` (Varejo)
-  * `EDU` (Educação)
-  * `GOV` (Governo/Militar)
-  * `MED` (Saúde)
-  * `NGO` (Organizações sem fins lucrativos)
-  * `UNKN` (Setor desconhecido)
-  * `Total Geral` – soma de todos os setores
+**Atributos Principais:**
+
+| Coluna        | Descrição                                                     |
+| ------------- | ------------------------------------------------------------- |
+| `Date Breach` | Data do incidente                                             |
+| `BSF`         | Serviços financeiros                                          |
+| `BSO`         | Outros negócios (TI, manufatura, serviços)                    |
+| `BSR`         | Varejo (lojas físicas e online)                               |
+| `EDU`         | Educação (escolas, universidades)                             |
+| `GOV`         | Governo e forças armadas                                      |
+| `MED`         | Saúde (hospitais, clínicas)                                   |
+| `NGO`         | Organizações sem fins lucrativos                              |
+| `UNKN`        | Setor desconhecido (não classificado por falta de informação) |
+| `Total Geral` | Soma de todos os setores                                      |
+
+**Pré-Processamento:**
+
+* Ajuste de datas incompletas: descartadas datas apenas com ano (`YYYY`), e datas `YYYY-MM` assumiram dia 1.
+* Filtro temporal aplicado: `2010-01-01` a `2023-12-31`.
+* Reamostragem mensal: `df.resample('ME').sum()`.
+* Tratamento de **outliers** via **IQR (Interquartile Range)** para maior robustez dos modelos.
+* Cálculo do **Expoente de Hurst** para avaliar persistência ou aleatoriedade das séries.
+
+---
+
+### Configuração do Ambiente (Python/Colab)
+
+```python
+# Bibliotecas principais
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Modelos e métricas
+from prophet import Prophet                # Modelo Prophet (Meta/Facebook)
+from statsmodels.tsa.statespace.sarimax import SARIMAX  # ARIMA/SARIMA
+from xgboost import XGBRegressor           # Modelo XGBoost
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+
+# Configuração de visualização
+sns.set_style("whitegrid")
+plt.rcParams['figure.figsize'] = (12, 6)
+
+print("✅ Ambiente configurado e bibliotecas importadas com sucesso!")
+```
 
 ---
 
