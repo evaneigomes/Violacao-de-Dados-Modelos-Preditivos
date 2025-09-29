@@ -123,73 +123,67 @@ print("✅ Ambiente configurado com sucesso!")
 
 > 💡 O ambiente foi validado no **Google Colab** e é compatível com ambientes locais que utilizem Python 3.10 ou superior.
 
----
 
 ## 4. Preparação dos Dados
 
-1. **Leitura direta** do arquivo (Excel/Google Sheets).
-2. **Ajuste de datas incompletas** (`YYYY` → descartado; `YYYY-MM` → assumido dia 1).
-3. **Filtro temporal:** `2010-01-01` a `2023-12-31`.
-4. **Reamostragem mensal:** `df.resample('ME').sum()`.
-5. **Tratamento de valores ausentes/outliers** e aplicação do **expoente de Hurst** para avaliar persistência ou aleatoriedade das séries.
+A preparação dos dados teve como objetivo **organizar as séries temporais** para os modelos Prophet, ARIMA e XGBoost, garantindo consistência entre setores e períodos.
+
+As etapas realizadas foram:
+
+1. **Carregamento do Dataset**
+
+   * O notebook lê a base consolidada de violações de dados por setor, previamente salva em planilha.
+
+2. **Ajuste de Datas**
+
+   * A coluna com as datas dos incidentes foi padronizada para um único formato válido.
+   * Foram descartados registros com datas incompletas (por exemplo, apenas ano).
+
+3. **Filtro Temporal**
+
+   * O conjunto foi restrito ao período de **janeiro/2010 a dezembro/2023**.
+
+4. **Agregação Mensal**
+
+   * As séries foram **reamostradas em frequência mensal (ME)** para consolidar a contagem de incidentes por mês e por setor.
+
+5. **Análise do Expoente de Hurst**
+
+   * Foi calculado o **expoente de Hurst** para cada setor, a fim de verificar se as séries apresentavam **persistência, reversão à média ou comportamento aleatório**.
 
 ---
 
-## 5. Metodologia e Modelos
+## 5. Métricas de Avaliação e Resultados
 
-* **Treino:** todas as observações **exceto as últimas 24 meses**
-* **Teste:** **últimas 24 meses** (2022-2023)
-* **Grid Search** para ajuste de hiperparâmetros de cada modelo
+O notebook realiza a **avaliação comparativa do desempenho dos modelos Prophet, ARIMA e XGBoost** na previsão do número mensal de violações de dados por setor organizacional.
 
-### a) Prophet
+### Métricas de Avaliação
 
-* `changepoint_prior_scale` ∈ {0.05, 0.1, 0.3, 0.5}
-* `fourier_order` ∈ {5, 10, 15}
-* `n_changepoints` ∈ {25, 50}
+Foram utilizadas métricas padrão para séries temporais:
 
-### b) ARIMA/SARIMA
+* **MAE (Mean Absolute Error)** – erro médio absoluto.
+* **RMSE (Root Mean Square Error)** – raiz do erro quadrático médio.
+* **MAPE (%) (Mean Absolute Percentage Error)** – erro percentual absoluto médio.
 
-* Ordens não sazonais `(p,d,q)` e sazonais `(P,D,Q,s)` com sazonalidade 12
-
-### c) XGBoost Regressor
-
-* `n_estimators`, `max_depth`, `learning_rate` otimizados por grid search
+> 🔎 O **MAPE (%)** é destacado como **métrica principal** por permitir **comparação proporcional entre setores com diferentes magnitudes**.
 
 ---
 
-## 6. Métricas de Avaliação
+### Resultados Gerados
 
-Foram utilizadas três métricas clássicas:
+O notebook:
 
-* **MAE** (Mean Absolute Error)
-* **RMSE** (Root Mean Square Error)
-* **MAPE (%)** (Mean Absolute Percentage Error) – **métrica principal** por permitir comparação relativa entre setores.
-
-De acordo com **Lewis (1982)**:
-
-* **MAPE < 10%:** Alta precisão
-* **10 ≤ MAPE < 20%:** Boa precisão
-* **20 ≤ MAPE < 50%:** Precisão razoável
-* **MAPE ≥ 50%:** Previsão imprecisa
-
----
-
-## 7. Execução do Projeto
-
-1. Abrir o notebook **`OrganizationType_Prophet_x_Arima_x_Xgboost_v2.ipynb`** no Colab.
-2. Instalar as dependências listadas.
-3. Carregar o dataset.
-4. Executar as células na sequência:
-
-   * Pré-processamento e reamostragem
-   * Ajuste e treino dos modelos (Prophet × ARIMA × XGBoost)
-   * Comparação de métricas
-   * Visualizações (gráficos Real × Previsto e heatmap comparativo)
-5. Resultados exportados em CSV:
+1. Treina os três modelos em **cada setor** (BSF, BSO, BSR, EDU, GOV, MED, NGO, UNKN e Total Geral).
+2. Calcula as métricas **MAE, RMSE e MAPE (%)** para o conjunto de **teste**.
+3. Exporta os resultados para arquivos CSV:
 
    * `resultados_prophet_gridsearch.csv`
    * `resultados_arima_gridsearch.csv`
    * `melhores_resultados_xgboost.csv`
+4. Gera visualizações:
+
+   * **Comparação entre valores reais e previstos**;
+   * **Heatmap comparativo do MAPE (%)** entre os modelos e setores.
 
 ---
 
