@@ -82,24 +82,46 @@ plt.rcParams['figure.figsize'] = (12, 6)
 print("✅ Ambiente configurado e bibliotecas importadas com sucesso!")
 ```
 
+
 ---
 
 ## 3. Ambiente e Dependências
 
-O código foi desenvolvido em **Python 3.10+** e testado no **Google Colab**.
+**Linguagem:** Python **3.10+**
+**IDE recomendada:** [Google Colab](https://colab.research.google.com/) – para execução interativa em nuvem.
+
+### Instalação das Dependências
 
 ```bash
-pip install prophet openpyxl scikit-learn xgboost matplotlib pandas numpy seaborn
+pip install prophet statsmodels xgboost scikit-learn pandas numpy matplotlib seaborn openpyxl
 ```
 
-Principais bibliotecas:
+### Principais Bibliotecas Utilizadas
 
-* **prophet** – séries temporais (Meta/Facebook Prophet)
-* **statsmodels** – ARIMA/SARIMA
-* **xgboost** – Gradient Boosting
-* **scikit-learn** – métricas (MAE, RMSE, MAPE)
-* **pandas/numpy** – manipulação numérica
-* **matplotlib/seaborn** – visualizações e heatmaps
+* **prophet** – modelo estatístico aditivo para séries temporais.
+* **statsmodels** – implementação do **ARIMA/SARIMA**.
+* **xgboost** – regressão baseada em *gradient boosting* para padrões não lineares.
+* **scikit-learn** – métricas (MAE, RMSE, MAPE) e funções auxiliares.
+* **pandas / numpy** – ETL e manipulação numérica.
+* **matplotlib / seaborn** – visualizações gráficas e heatmaps.
+* **openpyxl** – leitura e escrita de arquivos Excel.
+
+### Configuração de Estilo dos Gráficos
+
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Estilo visual
+sns.set_style("whitegrid")
+plt.rcParams['figure.figsize'] = (12, 6)
+plt.rcParams['axes.labelweight'] = 'bold'
+plt.rcParams['axes.titleweight'] = 'bold'
+
+print("✅ Ambiente configurado com sucesso!")
+```
+
+> 💡 O ambiente foi validado no **Google Colab** e é compatível com ambientes locais que utilizem Python 3.10 ou superior.
 
 ---
 
