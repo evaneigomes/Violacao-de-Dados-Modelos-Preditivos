@@ -153,7 +153,7 @@ As etapas realizadas foram:
 
 ---
 
-## 5. Métricas de Avaliação e Resultados
+## 5. Métricas de Avaliação
 
 O notebook realiza a **avaliação comparativa do desempenho dos modelos Prophet, ARIMA e XGBoost** na previsão do número mensal de violações de dados por setor organizacional.
 
@@ -169,25 +169,7 @@ Foram utilizadas métricas padrão para séries temporais:
 
 ---
 
-### Resultados Gerados
-
-O notebook:
-
-1. Treina os três modelos em **cada setor** (BSF, BSO, BSR, EDU, GOV, MED, NGO, UNKN e Total Geral).
-2. Calcula as métricas **MAE, RMSE e MAPE (%)** para o conjunto de **teste**.
-3. Exporta os resultados para arquivos CSV:
-
-   * `resultados_prophet_gridsearch.csv`
-   * `resultados_arima_gridsearch.csv`
-   * `melhores_resultados_xgboost.csv`
-4. Gera visualizações:
-
-   * **Comparação entre valores reais e previstos**;
-   * **Heatmap comparativo do MAPE (%)** entre os modelos e setores.
-
----
-
-## 8. Resultados Principais
+## 6. Resultados Principais
 
 O desempenho foi avaliado por **MAPE (%)** para cada setor e modelo.
 
@@ -200,7 +182,7 @@ O desempenho foi avaliado por **MAPE (%)** para cada setor e modelo.
 
 ---
 
-## 9. Conclusão
+## 7. Conclusão
 
 A análise evidencia que **a métrica MAPE foi determinante para identificar a acurácia relativa entre setores e modelos**, validando achados do artigo de referência.
 
@@ -215,7 +197,7 @@ Esses resultados reforçam a importância da **seleção contextual do modelo** 
 
 ---
 
-## 10. Estrutura do Repositório
+## 8. Estrutura do Repositório
 
 ```
 ├── OrganizationType_Prophet_x_Arima_x_Xgboost_v2.ipynb
